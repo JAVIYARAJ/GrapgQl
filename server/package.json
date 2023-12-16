@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "GraphQl Learning Project.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JAVIYARAJ/GrapgQl.git"
+  },
+  "author": "Javiya raj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JAVIYARAJ/GrapgQl/issues"
+  },
+  "homepage": "https://github.com/JAVIYARAJ/GrapgQl#readme",
+  "dependencies": {
+    "@apollo/client": "^3.8.8",
+    "@apollo/server": "^4.9.5",
+    "axios": "^1.6.2",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "graphql": "^16.8.1",
+    "nodemon": "^3.0.2"
+  }
+}
