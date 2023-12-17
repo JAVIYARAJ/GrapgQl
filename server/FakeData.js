@@ -243,4 +243,43 @@ const AllUser=[
     }
   ]
 
-  module.exports={AllUser,ADDRESS}
+  const TASK_LIST=[
+    {
+      id:1,
+      title:"Learn GraphQl",
+      description:"using youtube video and official Graph Ql Doc",
+      timeLine:"2 hour",
+      createdBy:1,
+      status:"COMPLETED",
+    },
+    {
+      id:2,
+      title:"Learn Jetpack compose",
+      description:"using youtube video and official Jetpack Android  Doc",
+      timeLine:"5 hour",
+      createdBy:1,
+      status:"IN_PROGRESS",
+    
+    },
+    {
+      id:3,
+      title:"Learn Node",
+      description:"using youtube video and official Node Doc",
+      timeLine:"2 hour",
+      createdBy:3,
+      status:"ON_HOLD",
+    },
+    {
+      id:4,
+      title:"Learn Js",
+      description:"using youtube video and official W3School Website",
+      timeLine:"2 hour",
+      createdBy:4,
+      status:"COMPLETED",
+      
+    }
+  ]
+
+  
+
+  module.exports={AllUser,ADDRESS,TASK_LIST}
