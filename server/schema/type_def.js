@@ -6,6 +6,7 @@ const typeDef=
         city:String!
         country:String!
     }
+
     type User{
         id: Int!
         name:String!
@@ -23,9 +24,6 @@ const typeDef=
         status:TaskStatus!
     }
 
-    
-    
-
     type Query{
         getUsers: [User]
         getUser(id:Int!):User
@@ -37,17 +35,30 @@ const typeDef=
         email:String!
     }
 
+    input InputUser{
+        id: Int!
+        name:String!
+        email:String!
+    }
+    
     input CreateTask{
         title:String!
         description:String!
         timeLine:String!
-        createdBy:User
+        createdBy:Int!
         status:TaskStatus=IN_PROGRESS
+    }
+
+    input ChangeTaskStatus{
+        id:Int!
+        status:TaskStatus!
     }
 
     type Mutation{
         createUser(input:CreateUserInput):User!
         createTask(input:CreateTask):Task!
+        updateTaskStatus(input:ChangeTaskStatus):Task!
+        removeTask(id:Int!):Task!
     }
 
     enum TaskStatus{

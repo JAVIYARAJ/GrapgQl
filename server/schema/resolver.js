@@ -8,16 +8,13 @@ const resolver={
     Task:{
         createdBy:(task)=>AllUser.find(user=>user.id==task.createdBy)
     },
-    CreateTask:{
-        createdBy:()=>AllUser[0]
-    },
     Query:{
         getUsers:()=>AllUser,
         getUser:(parent,args)=>{
             const id=Number(args.id)
             return AllUser.find(user=>user.id==id)
         },
-        getAllTask:()=>TASK_LIST
+        getAllTask:()=>TASK_LIST.filter(task=>task.isDeleted==false)
     },
     Mutation:{
         createUser:(parent,args)=>{
@@ -30,9 +27,23 @@ const resolver={
         createTask:(parent,args)=>{
             const lastTaskId=TASK_LIST[TASK_LIST.length-1].id
             const newTask=args.input
-            newTask.id=lastTaskId
+            newTask.id=lastTaskId+1
             TASK_LIST.push(newTask)
             return newTask
+        },
+
+        updateTaskStatus:(parent,args)=>{
+            const {id,status}=args.input
+            const updateTask=TASK_LIST.find(task=>task.id==id)
+            updateTask.status=status
+            return updateTask
+        },
+
+        removeTask:(parent,args)=>{
+            const id=args.id
+            const removedTask=TASK_LIST.find(task=>task.id==id)
+            removedTask.isDeleted=true
+            return removedTask
         }
     }
 }

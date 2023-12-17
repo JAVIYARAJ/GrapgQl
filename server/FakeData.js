@@ -251,6 +251,7 @@ const AllUser=[
       timeLine:"2 hour",
       createdBy:1,
       status:"COMPLETED",
+      isDeleted:false
     },
     {
       id:2,
@@ -259,7 +260,7 @@ const AllUser=[
       timeLine:"5 hour",
       createdBy:1,
       status:"IN_PROGRESS",
-    
+      isDeleted:false
     },
     {
       id:3,
@@ -268,6 +269,7 @@ const AllUser=[
       timeLine:"2 hour",
       createdBy:3,
       status:"ON_HOLD",
+      isDeleted:false
     },
     {
       id:4,
@@ -276,7 +278,7 @@ const AllUser=[
       timeLine:"2 hour",
       createdBy:4,
       status:"COMPLETED",
-      
+      isDeleted:false      
     }
   ]
 
