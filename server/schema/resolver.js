@@ -3,13 +3,18 @@ const {AllUser,ADDRESS,TASK_LIST}=require('../FakeData')
 
 const resolver={
     User:{
-        address:(user)=>ADDRESS.find(address=>address.id==user.id)
+        address:(args)=>{
+            return ADDRESS.find(address=>address.id==args.id)
+        }
     },
     Task:{
         createdBy:(task)=>AllUser.find(user=>user.id==task.createdBy)
     },
     Query:{
-        getUsers:()=>AllUser,
+        getUsers:(parent,args,context)=>{
+            console.log(context)
+            return AllUser
+        },
         getUser:(parent,args)=>{
             const id=Number(args.id)
             return AllUser.find(user=>user.id==id)

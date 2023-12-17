@@ -1,11 +1,13 @@
 
+// User->Address
+
 const typeDef=
     `
     type Address{
         id:ID!
         city:String!
         country:String!
-    }
+    } 
 
     type User{
         id: Int!
@@ -29,7 +31,7 @@ const typeDef=
         getUser(id:Int!):User
         getAllTask : [Task]
     }
-
+    
     input CreateUserInput{
         name:String!
         email:String!
