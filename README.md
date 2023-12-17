@@ -22,14 +22,12 @@ GraphQL provides a complete and understandable description of the data in your A
 ```bash
   npm install express
 
-
 ```
 
 2 Install dotenv
 
 ```bash
   npm install dotenv
-
 
 ```
 
@@ -38,14 +36,12 @@ GraphQL provides a complete and understandable description of the data in your A
 ```bash
   npm install nodemon
 
-
 ```
 
 4 Install apollo apollo
 
 ```bash
   npm install @apollo/apollo graphql
-
 
 ```
     
@@ -168,6 +164,5 @@ GraphQL provides a complete and understandable description of the data in your A
 
 ```bash
  http://localhost:8000/graphql
-
 
 ```
