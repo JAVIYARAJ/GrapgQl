@@ -160,6 +160,31 @@ GraphQL provides a complete and understandable description of the data in your A
 
 ```
 
+6 Fragment and Error handling with union  
+
+```bash
+ query GetUsers {
+  getUsers{
+    ... on UserSuccessResult{
+      users {
+        ...UserTypeFragment
+      }
+    }
+    ... on UserErrorResult{
+      message
+    }
+  }
+}
+
+fragment UserTypeFragment on User{
+  id,
+  name,
+  email
+
+}
+
+```
+
 7 run localhost apollo server 
 
 ```bash
