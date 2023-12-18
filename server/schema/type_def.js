@@ -63,6 +63,17 @@ const typeDef=
         removeTask(id:Int!):Task!
     }
 
+    
+    type UserSuccessResult{
+        getUsers: [User]!
+    }
+
+    type UserErrorResult{
+        message:String!
+    }
+
+    union UserResult= UserSuccessResult | UserErrorResult
+
     enum TaskStatus{
         COMPLETED,
         ON_HOLD,

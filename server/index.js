@@ -19,6 +19,7 @@ async function startServer(){
     })
     
     await server.start()
+    
     app.use(parser.json())
     app.use('/graphql', expressMiddleware(server,{
         context:async({req,res})=>{
