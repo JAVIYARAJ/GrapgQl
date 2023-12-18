@@ -1,6 +1,4 @@
 
-// User->Address
-
 const typeDef=
     `
     type Address{
@@ -8,7 +6,7 @@ const typeDef=
         city:String!
         country:String!
     } 
-
+    
     type User{
         id: Int!
         name:String!
@@ -27,7 +25,7 @@ const typeDef=
     }
 
     type Query{
-        getUsers: [User]
+        getUsers: UserResult
         getUser(id:Int!):User
         getAllTask : [Task]
     }
@@ -65,11 +63,11 @@ const typeDef=
 
     
     type UserSuccessResult{
-        getUsers: [User]!
+        users: [User]!
     }
 
     type UserErrorResult{
-        message:String!
+        message:String
     }
 
     union UserResult= UserSuccessResult | UserErrorResult

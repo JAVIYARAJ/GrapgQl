@@ -24,7 +24,7 @@ async function startServer(){
     app.use('/graphql', expressMiddleware(server,{
         context:async({req,res})=>{
             return {
-                token:"raj javiya"
+                token:"your_token"
             }
         }
     }))

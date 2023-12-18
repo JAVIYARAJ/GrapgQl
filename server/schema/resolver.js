@@ -12,8 +12,8 @@ const resolver={
     },
     Query:{
         getUsers:(parent,args,context)=>{
-            console.log(context)
-            return AllUser
+            if(AllUser) return {users:AllUser}
+            return {message:"User not founds"}
         },
         getUser:(parent,args)=>{
             const id=Number(args.id)
@@ -49,6 +49,20 @@ const resolver={
             const removedTask=TASK_LIST.find(task=>task.id==id)
             removedTask.isDeleted=true
             return removedTask
+        }
+    },
+
+    UserResult:{
+        __resolveType(args){
+            if(args.users) {
+                return "UserSuccessResult"
+            }
+            
+            if(args.message){
+                return "UserErrorResult"
+            }
+
+            return null
         }
     }
 }

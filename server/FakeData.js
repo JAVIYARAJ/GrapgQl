@@ -1,4 +1,5 @@
-const AllUser=[
+const AllUser=
+[
     {
       "id": 1,
       "name": "Leanne Graham",
