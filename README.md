@@ -188,6 +188,6 @@ fragment UserTypeFragment on User{
 7 run localhost apollo server 
 
 ```bash
- http://localhost:8000/graphql
+ http://localhost:PORT/graphql
 
 ```
